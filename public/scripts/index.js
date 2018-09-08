@@ -32,9 +32,7 @@ window.onload = () => {
                 
                 viewer.appendChild(video);
                 
-                const prev = document.getElementById("prev");
-                const next = document.getElementById("next");
-                const play = document.getElementById("play");
+                
                 const sv_3 = document.getElementById("shift-value-3");
                 const sv_5 = document.getElementById("shift-value-5");
                 const sv_10 = document.getElementById("shift-value-10");
@@ -64,8 +62,49 @@ window.onload = () => {
 
                 
                 
-                
+                const half = document.getElementById("rate-h");
+                const normal = document.getElementById("rate-1");
+                const double = document.getElementById("rate-2");
+                normal.style.color = "#f00";
                 let rate = 1.0;
+                half.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.target.style.color = "#f00";
+                    normal.style.color = "#00B7FF";
+                    double.style.color = "#00B7FF";
+                    rate = 0.5;
+                    if (video) {
+                        video.playbackRate = rate;
+                    }
+                });
+                normal.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.target.style.color = "#f00";
+                    half.style.color = "#00B7FF";
+                    double.style.color = "#00B7FF";
+                    rate = 1.0;
+                    if (video) {
+                        video.playbackRate = rate;
+                    }
+                });
+                double.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.target.style.color = "#f00";
+                    half.style.color = "#00B7FF";
+                    normal.style.color = "#00B7FF";
+                    rate = 2.0;
+                    if (video) {
+                        video.playbackRate = rate;
+                    }
+                });
+
+
+
+
+
+                const prev = document.getElementById("prev");
+                const next = document.getElementById("next");
+                const play = document.getElementById("play");
                 prev.addEventListener("click", (e) => {
                     e.preventDefault();
                     console.log("prev clicked");
