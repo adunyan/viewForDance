@@ -24,7 +24,7 @@ window.onload = () => {
                 let video = document.createElement("video");
 
                 video.src = window.URL.createObjectURL(files[i]);
-                video.onload = function (e) {
+                video.loadeddata = function (e) {
                     console.log("video URL revoked");
                     window.URL.revokeObjectURL(this.src);
                 }
@@ -35,9 +35,37 @@ window.onload = () => {
                 const prev = document.getElementById("prev");
                 const next = document.getElementById("next");
                 const play = document.getElementById("play");
-
-                let rate = 1.0;
+                const sv_3 = document.getElementById("shift-value-3");
+                const sv_5 = document.getElementById("shift-value-5");
+                const sv_10 = document.getElementById("shift-value-10");
+                sv_5.style.color = "#f00";
                 let shiftValue = 5;
+                sv_3.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.target.style.color = "#f00";
+                    sv_5.style.color = "#00B7FF";
+                    sv_10.style.color = "#00B7FF";
+                    shiftValue = 3;
+                });
+                sv_5.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.target.style.color = "#f00";
+                    sv_3.style.color = "#00B7FF";
+                    sv_10.style.color = "#00B7FF";
+                    shiftValue = 5;
+                });
+                sv_10.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.target.style.color = "#f00";
+                    sv_3.style.color = "#00B7FF";
+                    sv_5.style.color = "#00B7FF";
+                    shiftValue = 10;
+                });
+
+                
+                
+                
+                let rate = 1.0;
                 prev.addEventListener("click", (e) => {
                     e.preventDefault();
                     console.log("prev clicked");
