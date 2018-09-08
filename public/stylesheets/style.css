@@ -24,5 +24,9 @@ a {
   box-sizing: border-box; }
   #viewer video {
     width: 100%; }
+  #viewer #controls a {
+    display: inline-block; }
+    #viewer #controls a + a {
+      margin-left: 20px; }
 
 /*# sourceMappingURL=style.css.map */

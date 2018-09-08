@@ -31,4 +31,14 @@ a {
   video {
     width: 100%;
   }
+
+  #controls {
+
+    a {
+      display: inline-block;
+      + a {
+        margin-left: 20px;
+      }
+    }
+  }
 }
