@@ -1,8 +1,28 @@
 body {
-  padding: 50px;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
+
+.header {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: left; }
+  .header input#reader {
+    display: none; }
+
+#viewer {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px;
+  box-sizing: border-box; }
+  #viewer video {
+    width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

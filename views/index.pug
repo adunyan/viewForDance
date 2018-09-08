@@ -1,7 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  
-  form
-    input(type="file", accept="video/*", name="video")
+
+  .header
+    h1= title
+    input#reader(type="file", accept="video/*", name="video")
+    a#selector(href="#") select video 
+
+  #viewer
