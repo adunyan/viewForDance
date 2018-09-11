@@ -57,9 +57,23 @@ a {
     left: 0;
     width: 100%;
     z-index: 2;
+
+    #seek {
+      width: 100%;
+      height: 6px;
+      background-color: #888;
+      position: relative;
+      #progress {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        background-color: #a34;
+      }
+    }
     #controls {
       color: #fff;
-
+      height: 30px;
       div {
         cursor: pointer;
         &#buttons {

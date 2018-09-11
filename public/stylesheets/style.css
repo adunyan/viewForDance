@@ -45,8 +45,20 @@ a {
     left: 0;
     width: 100%;
     z-index: 2; }
+    #viewer #ui #seek {
+      width: 100%;
+      height: 6px;
+      background-color: #888;
+      position: relative; }
+      #viewer #ui #seek #progress {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        background-color: #a34; }
     #viewer #ui #controls {
-      color: #fff; }
+      color: #fff;
+      height: 30px; }
       #viewer #ui #controls div {
         cursor: pointer; }
         #viewer #ui #controls div#buttons {

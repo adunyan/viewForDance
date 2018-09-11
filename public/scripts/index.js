@@ -6,6 +6,7 @@ window.onload = () => {
         selector = document.getElementById("selector"),
         viewer = document.getElementById("viewer"),
         videoContainer = document.getElementById("container");
+        videoUi = document.getElementById("ui");
 
     let shiftValue = 5;
     let rateValue = 1.0;
@@ -36,6 +37,20 @@ window.onload = () => {
                 videoContainer.appendChild(video);
                 
 
+                //シークバー
+                const seek = videoUi.querySelector("#seek");
+                console.log(seek);
+                const progress = seek.querySelector("#progress");
+                
+                let progressWidth = 0;
+                video.addEventListener("timeupdate", (e) => {
+                    progressWidth = seek.offsetWidth * video.currentTime / video.duration;
+                    console.log(video.currentTime , video.duration, progressWidth);
+                    progress.style.width = progressWidth + "px";
+                });
+                
+                
+                
 
                 
 
