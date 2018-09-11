@@ -58,15 +58,35 @@ a {
     width: 100%;
     z-index: 2;
     #controls {
-      
-      a {
-        display: inline-block;
-        + a {
-          margin-left: 20px;
+      color: #fff;
+
+      div {
+        cursor: pointer;
+        &#buttons {
+          position: absolute;
+          bottom: 0;
+          left: 0;
         }
-        &.active {
-          color: #f00;
+        &#shift {
+          position: absolute;
+          bottom: 0;
+          right: 0;
         }
+        &#rate {
+          position: absolute;
+          bottom: 0;
+          right: 50%;
+        }
+        div {
+           display: inline-block;
+           + div {
+             margin-left: 20px;
+           }
+        }
+      }
+
+      .active {
+        color: #f00;
       }
     }
   }

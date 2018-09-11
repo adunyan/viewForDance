@@ -115,8 +115,6 @@ window.onload = () => {
                 //再生機能
                 const play = document.getElementById("play");
                 play.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    console.log("play clicked");
 
                     if (video) {
 

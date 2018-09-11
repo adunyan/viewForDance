@@ -45,11 +45,27 @@ a {
     left: 0;
     width: 100%;
     z-index: 2; }
-    #viewer #ui #controls a {
-      display: inline-block; }
-      #viewer #ui #controls a + a {
-        margin-left: 20px; }
-      #viewer #ui #controls a.active {
+    #viewer #ui #controls {
+      color: #fff; }
+      #viewer #ui #controls div {
+        cursor: pointer; }
+        #viewer #ui #controls div#buttons {
+          position: absolute;
+          bottom: 0;
+          left: 0; }
+        #viewer #ui #controls div#shift {
+          position: absolute;
+          bottom: 0;
+          right: 0; }
+        #viewer #ui #controls div#rate {
+          position: absolute;
+          bottom: 0;
+          right: 50%; }
+        #viewer #ui #controls div div {
+          display: inline-block; }
+          #viewer #ui #controls div div + div {
+            margin-left: 20px; }
+      #viewer #ui #controls .active {
         color: #f00; }
 
 /*# sourceMappingURL=style.css.map */
