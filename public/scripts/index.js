@@ -8,7 +8,7 @@ window.onload = () => {
         videoContainer = document.getElementById("container");
 
     let shiftValue = 5;
-    let rate = 1.0;
+    let rateValue = 1.0;
     selector.addEventListener("click", function (e) {
         if (reader) {
             reader.click();
@@ -35,83 +35,64 @@ window.onload = () => {
                 
                 videoContainer.appendChild(video);
                 
+
+
+                
+
+
+
+
+
+
                 //進度の選択
                 const shifts = document.getElementById("shift");
-                console.log(shifts.children);
                 for(let i = 0; i < shifts.children.length; i++) {
                     const ele = shifts.children[i];
-                    console.log(ele);
                     ele.addEventListener("click", (e) =>{
-                        e.preventDefault();
                         for (let j = 0; j < shifts.children.length; j++) {
                             shifts.children[j].classList.remove("active");
                         }
                         ele.classList.add("active");
                         let value = ele.dataset.value;
                         shiftValue = value;
-                        console.log(value, shiftValue);
                     });
                 }
                 
                 //再生レートの選択
-                const half = document.getElementById("rate-h");
-                const normal = document.getElementById("rate-1");
-                const double = document.getElementById("rate-2");
-                normal.style.color = "#f00";
-                half.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    e.target.style.color = "#f00";
-                    normal.style.color = "#00B7FF";
-                    double.style.color = "#00B7FF";
-                    rate = 0.5;
-                    if (video) {
-                        video.playbackRate = rate;
-                    }
-                });
-                normal.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    e.target.style.color = "#f00";
-                    half.style.color = "#00B7FF";
-                    double.style.color = "#00B7FF";
-                    rate = 1.0;
-                    if (video) {
-                        video.playbackRate = rate;
-                    }
-                });
-                double.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    e.target.style.color = "#f00";
-                    half.style.color = "#00B7FF";
-                    normal.style.color = "#00B7FF";
-                    rate = 2.0;
-                    if (video) {
-                        video.playbackRate = rate;
-                    }
-                });
-
-
-
+                const rates = document.getElementById("rate");
+                console.log(rate.children);
+                for (let i = 0; i < rates.children.length; i++) {
+                    const ele = rates.children[i];
+                    ele.addEventListener("click", (e) => {
+                        for (let j = 0; j < rates.children.length; j++) {
+                            rates.children[j].classList.remove("active");
+                        }
+                        ele.classList.add("active");
+                        const value = ele.dataset.value;
+                        rateValue = value;
+                        if (video) {
+                            video.playbackRate = rateValue;
+                        }
+                    });
+                }
 
                 //ジャンプ機能
                 const leftOfLayer1 = videoContainer.querySelector(".layer-1.left");
                 const rightOfLayer1 = videoContainer.querySelector(".layer-1.right");
         
                 leftOfLayer1.addEventListener("click", (e) => {
-                    e.preventDefault();
                     console.log("prev clicked");
                     if (video) {
                         video.currentTime -= shiftValue;
                     }
                 });
                 rightOfLayer1.addEventListener("click", (e) => {
-                    e.preventDefault();
                     console.log("next clicked");
                     if (video) {
                         video.currentTime += shiftValue;
                     }
                 });
                 
-
                 //再生機能
                 const play = document.getElementById("play");
                 play.addEventListener("click", (e) => {
@@ -135,9 +116,6 @@ window.onload = () => {
                     }
                 });
                 
-
-
-
             }
         }
     });
