@@ -8,16 +8,21 @@ block content
     a#selector(href="#") select video 
 
   #viewer
-    #controls
-      a#prev(href="#") prev
-      a#play(href="") play
-      a#next(href="#") next
+    #container
+      .layer-1.left
+      .layer-1.right
 
-      a#shift-value-3(href="#") 3
-      a#shift-value-5(href="#") 5
-      a#shift-value-10(href="#") 10
+    #ui
 
-      a#rate-h(href="#") 0.5
-      a#rate-1(href="#") 1.0
-      a#rate-2(href="#") 1.5
+      #controls
+        #buttons
+          a#play(href="") play
+        #shift
+          a.shift(href="#", data-value="3") 3
+          a.shift(href="#", data-value="5") 5
+          a.shift(href="#", data-value="10") 10
+        #rate
+          a#rate-h(href="#") 0.5
+          a#rate-1(href="#") 1.0
+          a#rate-2(href="#") 1.5
 
