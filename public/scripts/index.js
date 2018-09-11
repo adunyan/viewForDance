@@ -59,7 +59,7 @@ window.onload = () => {
 
 
 
-                //進度の選択
+                //jump値の選択
                 const shifts = document.getElementById("shift");
                 for(let i = 0; i < shifts.children.length; i++) {
                     const ele = shifts.children[i];
@@ -69,7 +69,7 @@ window.onload = () => {
                         }
                         ele.classList.add("active");
                         let value = ele.dataset.value;
-                        shiftValue = value;
+                    shiftValue = Number(value);
                     });
                 }
                 
@@ -84,7 +84,7 @@ window.onload = () => {
                         }
                         ele.classList.add("active");
                         const value = ele.dataset.value;
-                        rateValue = value;
+                        rateValue = Number(value);
                         if (video) {
                             video.playbackRate = rateValue;
                         }
@@ -96,32 +96,28 @@ window.onload = () => {
                 const rightOfLayer1 = videoContainer.querySelector(".layer-1.right");
         
                 leftOfLayer1.addEventListener("click", (e) => {
-                    console.log("prev clicked");
                     if (video) {
                         video.currentTime -= shiftValue;
+                        console.log("prev clicked", shiftValue, video.currentTime);
                     }
                 });
                 rightOfLayer1.addEventListener("click", (e) => {
-                    console.log("next clicked");
                     if (video) {
                         video.currentTime += shiftValue;
+                        console.log("next clicked", shiftValue, video.currentTime);
                     }
                 });
                 
                 //再生機能
                 const play = document.getElementById("play");
                 play.addEventListener("click", (e) => {
-
                     if (video) {
-
                         if(video.played == 0) {
                             console.log("video started");
-
                             video.play();
                         } else {
                             if(!video.paused){
                                 console.log("video paused");
-
                                 video.pause();
                             } else {
                                 console.log("video is playing");
